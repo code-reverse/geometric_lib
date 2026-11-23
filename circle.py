@@ -9,6 +9,10 @@ def area(r):
         Возвращает: 
             s (float): площадь окружности
     '''
+    if not isinstance(r, int):
+        raise ValueError("Invalid input data type, expected integer")
+    if r<=0:
+        raise ValueError("Input data must be > 0")
     return math.pi * r * r
 
 
@@ -20,5 +24,9 @@ def perimeter(r):
         Возвращает: 
             p (float): длинну окружности
     '''
+    if not isinstance(r, int):
+        raise ValueError("Invalid input data type, expected integer")
+    if r<=0:
+        raise ValueError("Input data must be > 0")
     return 2 * math.pi * r
 
