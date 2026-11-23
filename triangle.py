@@ -8,6 +8,10 @@ def area(a, h):
         Возвращаемое значение:
             s (float): площадь треугольника
     '''
+    if not isinstance(a, int) or not isinstance(h, int):
+        raise ValueError("Invalid input data type, expected integer")
+    if a<=0 or h<=0:
+        raise ValueError("Input data must be > 0")
     return a * h / 2 
 
 def perimeter(a, b, c): 
@@ -21,4 +25,10 @@ def perimeter(a, b, c):
         Возвращаемое значение:
             p (int): периметр треугольника
     '''
+    if not isinstance(a, int) or not isinstance(b, int) or not isinstance(c, int):
+        raise ValueError("Invalid input data type, expected integer")
+    if a+b <= c or a+c <= b or b+c <= a:
+        raise ValueError("Invalid input triangle, expected")
+    if a<=0 or b<=0 or c<=0:
+        raise ValueError("Input data must be > 0")
     return a + b + c 
