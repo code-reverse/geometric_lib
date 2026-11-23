@@ -1,0 +1,31 @@
+name: unittest
+on:
+   # События, которые запускают jobs
+    push:
+
+# jobs запускаются параллельно, если не указана последовательность
+jobs:
+    # Название job вы можете назвать как угодно
+    unittest_ubuntu:
+      # Операционная система в виртуальной машине, в которой запускаются процессы
+      runs-on: ubuntu-latest
+      # Шаги
+      steps:
+        # Actions от github: проверяет репозиторий, гит и т.д.
+        - uses: actions/checkout@v3
+
+        # Пример однолинейного простого скрипта shell
+        - name: Test library on ubuntu-latest
+          run: python3 -m unittest discover -s tests -v
+        # Название job вы можете назвать как угодно
+    unittest_windows:
+      # Операционная система в виртуальной машине, в которой запускаются процессы
+      runs-on: windows-latest
+      # Шаги
+      steps:
+        # Actions от github: проверяет репозиторий, гит и т.д.
+        - uses: actions/checkout@v3
+
+        # Пример однолинейного простого скрипта shell
+        - name: Test library on windows-latest
+          run: python -m unittest discover -s tests -v
