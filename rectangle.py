@@ -7,6 +7,10 @@ def area(a, b):
         Возвращает:
             s (int): площадь прямоугольника
     '''
+    if not isinstance(a, int) or not isinstance(b, int):
+        raise ValueError("Invalid input data type, expected integer")
+    if a<=0 or b<=0:
+        raise ValueError("Input data must be > 0")
     return a * b 
 
 def perimeter(a, b): 
@@ -18,4 +22,8 @@ def perimeter(a, b):
         Возвращает:
             p (int): периметр прямоугольника
     '''
+    if not isinstance(a, int) or not isinstance(b, int):
+        raise ValueError("Invalid input data type, expected integer")
+    if a<=0 or b<=0:
+        raise ValueError("Input data must be > 0")
     return (a + b) * 2
